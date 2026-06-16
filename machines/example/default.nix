@@ -52,7 +52,7 @@
 
   # The `ft` CLI helper. Requires ft.repoPath to locate scripts/ at runtime.
   ft.cli.enable = true;
-  ft.repoPath = "/home/example/nixos-config";
+  ft.repoPath = "/home/example/ft-template";
 
   ft.core.stateVersion = "25.05";
 }
