@@ -21,7 +21,7 @@
 
   inputs = {
     # The fast-track-nix framework. Aliased as ft-home by consumer convention.
-    ft-home.url = "github:track-prepped-68-corolla/fast-track-nix/testing";
+    ft-home.url = "github:track-prepped-68-corolla/fast-track-nix/tested";
 
     # Follow the framework's pins to avoid duplicate fetches and version drift.
     nixpkgs.follows = "ft-home/nixpkgs";
