@@ -10,9 +10,11 @@
 #   ft.microvms.instances.docker-vm = {
 #     enable = true;
 #     vmAddressSuffix = 2;              # last octet of the guest's IP
-#     vmMac = "02:00:00:00:00:01";     # MUST match the tap MAC below
 #     hostInterface = "eth0";          # host NIC for the VM's internet NAT
 #   };
+#
+# The tap interface name and MAC are derived from the VM name automatically on
+# both sides, so there is nothing to keep in sync.
 #
 # Komodo's persistent/browsable state lives on the auto host share the guest
 # baseline mounts at /srv/host-share (host /var/lib/microvm/docker-vm/share);
@@ -21,13 +23,8 @@
 # =============================================================================
 { ... }:
 {
-  microvm.interfaces = [
-    {
-      type = "tap";
-      id = "tap-docker-vm";
-      mac = "02:00:00:00:00:01";
-    }
-  ];
+  # The tap interface (name + MAC) is auto-derived from the VM name by the guest
+  # baseline, matching the host's ft.microvms lease — nothing to declare here.
 
   # Docker's data directory on a persistent disk image under the host state dir.
   microvm.volumes = [
